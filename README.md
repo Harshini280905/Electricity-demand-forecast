@@ -1,101 +1,103 @@
-# Electricity-demand-forecast
-📊 Delhi Electricity Load Forecasting Using Machine Learning
+# Electricity-Demand-Forecast
+
+📊 **Delhi Electricity Load Forecasting Using Machine Learning**
 
 🧠 “Predicting the future of power—one model at a time.”
 
-🚀 My First ML Project | Built with Linear Regression & Random Forest | Forecasting electricity demand in Delhi using real-world weather + energy data.
+---
 
-📌 Overview:
+## 🚀 Overview
 
-This project is a data-driven approach to forecasting total electricity demand (in MW) in Delhi using past weather conditions and historical generation data.
+This project presents a data-driven approach to forecasting total electricity demand (in MW) in Delhi by utilizing historical energy data along with past weather conditions. Two machine learning models—**Linear Regression** and **Random Forest Regressor**—are used to compare performance and understand the impact of various features.
 
-I used both Linear Regression and Random Forest Regressor to compare performance and understand feature contributions.
+---
 
-🗃️ Dataset Description:
+## 📌 Dataset Description
 
-✅ Source: Real-world dataset (CSV)
+- **Source:** Real-world dataset (CSV)
+- **Date Range:** 2018–2023
 
-🗓️ Date Range: 2018–2023
+### 🧾 Columns Included
 
-🧾 Columns:
+- **Weather Features:**  
+  - Temperature (`temp2(c)`)
+  - Wind Speed (`wind_speed50_ave`)
+  - Precipitation (`prectotcorr`)
+  - Surface Pressure (if available)
 
-Weather features: temperature, wind speed, precipitation, surface pressure
+- **Energy Features:**  
+  - Total Demand (MW) (`total_demand(mw)`)
+  - Maximum Generation (MW) (`max_generation(mw)`)
 
-Energy features: total demand, max generation
+- **Time Features:**  
+  - Day, Month, Year
 
-Time features: day, month, year
-Sample:
+#### Sample Data
 
 | temp2(c) | wind_speed50_ave | prectotcorr | total_demand(mw) | max_generation(mw) |
-|----------|------------------|-------------|-------------------|---------------------|
-| 19.11    | 2.64             | 0.00        | 8000.0            | 7651.0              |
+|----------|------------------|-------------|------------------|--------------------|
+| 19.11    | 2.64             | 0.00        | 8000.0           | 7651.0             |
 
+---
 
-🛠️ Tools & Libraries:
+## 🛠️ Tools & Libraries
 
-Python (Pandas, NumPy)
+- **Programming Language:** Python
+- **Data Manipulation:** Pandas, NumPy
+- **Machine Learning:** scikit-learn (Linear Regression, Random Forest Regressor, Metrics)
+- **Visualization:** Matplotlib, Seaborn
+- **Development Environment:** Jupyter Notebook
 
-scikit-learn (Linear Regression, Random Forest, Metrics)
+---
 
-Matplotlib, Seaborn for visualization
+## 🧪 ML Models Applied
 
-Jupyter Notebook
+### 📈 Linear Regression
 
+- **Performance Metrics:**
+  - **Train R²:** 0.896
+  - **Test R²:** 0.901
 
-🧪 ML Models Applied:
+### 🌳 Random Forest Regressor (Depth = 2)
 
-📈 Linear Regression
+- **Remarks:** Captures non-linear interactions
+- **Performance Metrics:**
+  - **Train R²:** 0.839
+  - **Test R²:** 0.839
 
+---
 
-Achieved:
+## 📊 Model Comparison
 
-Train R²: 0.896
+| Model                | Train R² | Test R² | Train MSE | Test MSE |
+|----------------------|----------|---------|-----------|----------|
+| **Linear Regression**| 0.896    | 0.901   | 292,897   | 263,111  |
+| **Random Forest**    | 0.839    | 0.839   | 455,537   | 427,145  |
 
-Test R²: 0.901
+**Insight:** Despite its simplicity, the Linear Regression model outperformed the Random Forest model on this dataset.
 
-🌳 Random Forest Regressor (Depth=2)
+---
 
-Captures non-linear interactions
+## 📉 Visualizations
 
-Achieved:
+1. **Actual vs. Predicted – Test Set**
+2. **Residual Distribution**
+3. **Feature Importance** (Based on Linear Regression coefficients)
 
-Train R²: 0.839
+---
 
-Test R²: 0.839
+## ✅ What I Learned
 
-📊 Model Comparison
+- **Data Preprocessing:** Cleaning, preprocessing, and managing date formats with Pandas.
+- **Model Building:** Training and evaluating regression models.
+- **Metrics Interpretation:** Understanding R², MSE, and the tuning of model parameters.
+- **Visualization:** Presenting insights with clear and effective visuals.
 
-Model	Train R²	Test R²	Train MSE	Test MSE
-Linear Regression	0.896	0.901	292,897	263,111
-Random Forest	0.839	0.839	455,537	427,145
+---
 
-📌 Insight: Despite its simplicity, Linear Regression outperformed Random Forest for this dataset.
+## 🔮 Future Improvements
 
-
-📉 Visualizations:
-
-1️⃣ Actual vs Predicted – Test Set
-
-2️⃣ Residual Distribution
-
-3️⃣ Feature Importance (Linear Regression Coefficients)
-
-✅ What I Learned
-
-🧹 Data cleaning, preprocessing, and date handling with Pandas
-
-⚙️ Building, training, and evaluating regression models
-
-📈 Interpreting model metrics and tuning parameters
-
-🎨 Presenting insights with clear visuals
-
-
-🔮 Future Improvements:
-
-Add hyperparameter tuning (GridSearchCV)
-
-Explore other regressors: XGBoost, Lasso, Ridge
-
-Add time-series analysis (ARIMA, LSTM)
+- **Hyperparameter Tuning:** Implement GridSearchCV for optimal model parameters.
+- **Additional Regressors:** Explore other models like XGBoost, Lasso, and Ridge.
+- **Time-Series Analysis:** Incorporate time-series forecasting methods (ARIMA, LSTM).
 
